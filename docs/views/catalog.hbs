@@ -1,0 +1,48 @@
+<main class="catalog-page">
+    <div class="container">
+        <div class="catalog-page__path">
+            <p>Главная / Каталог</p>
+        </div>
+        
+        {{#if isAuth}}
+            <a class="catalog-page__add btn-edit" href="/add">Добавить товар +</a>
+        {{/if}}
+
+        <div class="catalog-page__wrapper">
+
+            {{#if doors.length}}
+
+                {{#each doors}}
+                    <div class="catalog-page__card"> 
+                        <div class="catalog-page__card-plate">
+                            <div class="catalog-page__card-badge">{{badgeDoor2}}</div>
+                            <a href="/catalog/{{id}}">
+                                <img src="/{{imgUrl}}" alt="{{titleDoor}}">
+                            </a>
+                        </div>
+                        <a href="/catalog/{{id}}" target="_blank" class="catalog-page__card-title">
+                            Стальная дверь 
+                            <p>{{titleDoor}}</p>
+                        </a>
+                        <div class="catalog-page__card-class">{{classDoor}}</div>
+                        <div class="catalog-page__card-price-wrapper">
+                            <div class="catalog-page__card-price price">{{priceDoor}}</div>
+                            <div class="catalog-page__card-price catalog-page__old-card-price price">{{oldPriceDoor}}</div>
+                        </div>
+                        <button class="btn-incart btn-incart-js"><span>Добавить в корзину</span></button>
+
+                        {{#if @root.isAuth}}
+                            <a href="/catalog/{{id}}/edit?allow=true" class="btn-edit">
+                                <span>Редактировать</span>
+                            </a>
+                        {{/if}}
+                    </div>
+                {{/each}}
+
+            {{else}}
+                <h2>Товаров нет</h2>
+            {{/if}}
+
+        </div>
+    </div>
+</main>

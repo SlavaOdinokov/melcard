@@ -1,0 +1,239 @@
+<main>
+    <div class="card-door">
+        <div class="container">
+            <div class="card-door__path">
+                <p>Главная / Каталог / Стальная дверь {{door.titleDoor}}</p>
+            </div>
+
+            <div class="card-door-container">
+                <div class="card-door-img-wrapper">
+
+                    <div class="card-door__name-group">
+                        <div class="card-door-spec__badge">
+                            <span>{{door.badgeDoor1}}</span> 
+                        </div>
+                        <div class="card-door-spec__title">
+                            <h2>
+                                Стальная дверь 
+                                <p>{{door.titleDoor}}</p>
+                            </h2>
+                        </div>
+                    </div>
+                    
+                    <div class="card-door__img-group">
+                        <div class="card-door__img-door">
+                            <img src="/{{door.imgUrl}}" alt="{{door.titleDoor}}">
+                            <div class="img-door__badge">Внешняя панель</div>
+                        </div>
+
+                        <div class="card-door__img-panel">
+                            
+                            {{#if door.panelsParams}}
+                                {{#each door.panelsParams}}
+                                    <div class="img-panel-wrapper faded">
+                                        <img src="/img/card/panel/{{pathPanel}}.jpg" alt="{{namePanel}}">
+                                        <p class="img-panel__name">
+                                            <span>{{namePanel}}</span>
+                                        </p>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                            
+                            <div class="img-door__badge js-badge">Внутренняя панель</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-door-spec">
+                    <div class="card-door-spec__badge card-hide-mobile">
+                        <span>{{door.badgeDoor1}}</span> 
+                    </div>
+                    <div class="card-door-spec__title card-hide-mobile">
+                        <h2>
+                            Стальная дверь 
+                            <p>{{door.titleDoor}}</p>
+                        </h2>
+                    </div>
+                    <div class="card-door-spec__spec">
+                        <h5>Характеристики</h5>
+                        {{#each door.specifications}}
+                            <ul>
+                                <li class="card-door-spec__spec-item">
+                                    <span>Толщина стали</span>
+                                    <span>{{specSteelThickness}} мм</span>
+                                </li>
+                                <li class="card-door-spec__spec-item">
+                                    <span>Толщина полотна</span>
+                                    <span>{{specBladeThickness}} мм</span>
+                                </li>
+                                <li class="card-door-spec__spec-item">
+                                    <span>Толщина двери</span>
+                                    <span>{{specDoorThickness}} мм</span>
+                                </li>
+                                <li class="card-door-spec__spec-item">
+                                    <span>Вес двери</span>
+                                    <span>{{specDoorWeight}} кг</span>
+                                </li>
+                            </ul>
+                        {{/each}}
+                    </div>
+
+                    {{#if door.panelsParams}}
+                        <div class="card-door-spec__panel">
+                            <h5>Выбрать внутреннюю панель</h5>
+
+                            <div class="color-select">
+                                <div id="colorSelectSlider" class="owl-carousel">
+
+                                    {{#each door.panelsParams}}
+                                        <div class="{{classPanel}} color-select__item" data-name="{{namePanel}}" data-panel="{{pricePanel}}"></div>
+                                    {{/each}}
+
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    <div class="card-door-spec__price">
+                        <h5>Цена<span class="faded">С учетом внутренней панели *</span></h5>
+
+                        <div class="card-door-spec__price-group">
+                            <div data-price="{{door.priceDoor}}" class="card-door-spec__price-price price">{{door.priceDoor}}</div>
+                            <div class="card-door-spec__price-price card-door-spec__old-price-price price faded">{{door.oldPriceDoor}}</div>
+                        </div>
+                    </div>
+
+                    <button id="addToCartBtn" class="btn-incart card-door-spec__btn-add"><span>
+                        Добавить в корзину
+                    </span></button>
+                    <button class="btn-incart card-door-spec__btn-buynow"><span>Купить сейчас</span></button>
+                </div>
+            </div>
+            
+            <p class="assembly-questions mwauto card-hide-mobile">
+                *По вопросам комплектации обращайтесь к менеджеру по номеру 
+                <a href="tel:+79773233848">+7 (977)-323-38-48</a>
+            </p>
+        </div>
+
+        <div class="card-door__tabs-wrapper">
+            <div class="container">
+                <div class="card-door__tabs">
+                    <div class="card-door__tab">Описание</div> 
+                    <div class="card-door__tab card-door__tab--active">Услуги</div> 
+                    <div class="card-door__tab">Комплектация</div> 
+                </div>
+
+                <div class="card-door__tab-content">
+                    <div class="tab-content__desc tab-content faded">
+                        
+                        {{#if door.descDoor1}}
+                            <h2 class="tab-content__desc-title">Основные преимущества</h2>
+
+                            <div class="tab-content__desc-text">
+                                <p>{{door.descDoor1}}</p>
+                                <p>{{door.descDoor2}}</p>
+                                <p>{{door.descDoor3}}</p>
+                            </div>
+                        {{/if}}
+                    </div>
+                    
+                    <div class="card-door__tab-services tab-content faded">
+                        <label class="tab-services__item" data-services="dismantling">
+                            <input class="tab-services__real-checkbox" type="checkbox" value="" name="dismantling"> 
+                            <div class="tab-services__custom-checkbox"></div>
+                            <div class="tab-services__item-group">
+                                <span class="tab-services__item-service dismantling">Демонтаж</span>
+                                <span data-price="800" class="tab-services__item-price price">800</span>
+                            </div>
+                        </label>
+
+                        <label class="tab-services__item" data-services="mounting">
+                            <input class="tab-services__real-checkbox" type="checkbox" value="" name="mounting"> 
+                            <div class="tab-services__custom-checkbox"></div>
+                            <div class="tab-services__item-group">
+                                <span class="tab-services__item-service mounting">Монтаж</span>
+                                <span data-price="4000" class="tab-services__item-price price">4000</span>
+                            </div>
+                        </label>
+
+                        <label class="tab-services__item" data-services="delivery-city">
+                            <input class="tab-services__real-checkbox" type="checkbox" value="" name="delivery-city"> 
+                            <div class="tab-services__custom-checkbox"></div>
+                            <div class="tab-services__item-group">
+                                <span class="tab-services__item-service delivery-city">Доставка по Москве</span>
+                                <span data-price="2000" class="tab-services__item-price price">2000</span>
+                            </div>
+                        </label>
+
+                        <label class="tab-services__item" data-services="delivery-region">
+                            <input class="tab-services__real-checkbox" type="checkbox" value="" name="delivery-region"> 
+                            <div class="tab-services__custom-checkbox"></div>
+                            <div class="tab-services__item-group">
+                                <span class="tab-services__item-service delivery-region">Доставка по Московской области</span>
+                                <span data-price="4000" class="tab-services__item-price price">4000</span>
+                            </div>
+                        </label>
+
+                        <label class="tab-services__item" data-services="climbing">
+                            <input class="tab-services__real-checkbox" type="checkbox" value="" name="climbing"> 
+                            <div class="tab-services__custom-checkbox"></div>
+                            <div class="tab-services__item-group">
+                                <span class="tab-services__item-service climbing">Подъем по лестнице</span>
+                                <span class="climbing-price">(за этаж)</span>
+                                <span data-price="300" class="tab-services__item-price price">300</span>
+                            </div>
+                            <div class="services-btn-count-group count-group__climbing">
+                                <div class="services-btn-count services-btn-count__minus"></div>
+                                <span class="services-count">1</span>
+                                <div class="services-btn-count services-btn-count__plus"></div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="card-door__tab-assembly tab-content faded">
+
+                        {{#if door.assembly1.assemblyLocks1}}
+                            <div class="assembly-wrapper">
+                                <div class="assembly-titles">
+                                    <h3>Замки</h3>
+                                    <h3>Класс</h3>
+                                    <h3>Тип</h3>
+                                    <h3>Страна производителя</h3>
+                                    <h3>Количество ригелей</h3>
+                                    <h3>Колиество ключей</h3>
+                                </div>
+
+                                <div class="assembly-item">
+                                    <span>{{door.assembly1.assemblyLocks1}}</span>
+                                    <span >{{door.assembly1.assemblyClass1}}</span>
+                                    <span>{{door.assembly1.assemblyType1}}</span>
+                                    <span>{{door.assembly1.assemblyCountry1}}</span>
+                                    <span >{{door.assembly1.assemblyBolts1}}</span>
+                                    <span>{{door.assembly1.assemblyKeys1}}</span>
+                                </div>
+
+                                <div class="assembly-item">
+                                    <span>{{door.assembly2.assemblyLocks2}}</span>
+                                    <span >{{door.assembly2.assemblyClass2}}</span>
+                                    <span>{{door.assembly2.assemblyType2}}</span>
+                                    <span>{{door.assembly2.assemblyCountry2}}</span>
+                                    <span >{{door.assembly2.assemblyBolts2}}</span>
+                                    <span>{{door.assembly2.assemblyKeys2}}</span>
+                                </div>
+
+                            </div>
+                        {{/if}}
+
+                        <p class="assembly-questions">
+                            *По вопросам комплектации обращайтесь к менеджеру по номеру 
+                            <a href="tel:+79773233848">+7 (977)-323-38-48</a>
+                        </p>
+                    </div> 
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,339 @@
+<main>
+    <section class="main">
+        <div class="container">
+            <div class="main-wrapper">
+                <div class="main__heading">
+                    <h1>Стальные двери</h1>
+                    <p>Закажите замер дверных проемов совершенно бесплатно!</p>
+                    <button class="btn-dark-orange btn-call_1">Вызвать замерщика</button>
+                </div>
+                
+                {{#if stock}}
+                    {{#each stock}}
+                        <div class="main__stock">
+                            <span class="main__stock-stock">{{name}}</span>
+                            <p>{{string1}}<span>{{string2}}</span></p>
+                        </div>
+                    {{/each}}
+                {{/if}}
+
+            </div>
+        </div>
+    </section>
+
+    <section class="advantage">
+        <div class="container">
+            <div class="advantage__heading">
+                <h2 class="heading-sections">Почему выбирают нас?</h2>
+            </div>
+
+            <div class="advantage__cards">
+                <div class="advantage__card">
+                    <div class="advantage__card-number">1</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Высокая прочность</h4>
+                        <p class="advantage__card-text">
+                            В основе лежит каркас из гнутого профиля, предотвращающий преждевременную деформацию
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage__card">
+                    <div class="advantage__card-number">2</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Надежная изоляция</h4>
+                        <p class="advantage__card-text">
+                            Позволяет сохранить тепло, избежать проникновения посторонних звуков, пыли и сквозняков
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage__card">
+                    <div class="advantage__card-number">3</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Множество дизайнов</h4>
+                        <p class="advantage__card-text">
+                            Наши двери подходят для оформления современных и классических интерьеров
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage__card">
+                    <div class="advantage__card-number">4</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Легкость обслуживания</h4>
+                        <p class="advantage__card-text">
+                            Конструкции нужно иногда протирать от пыли, а с загрязнениями справится слабый мыльный раствор
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage__card">
+                    <div class="advantage__card-number">5</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Экологичность</h4>
+                        <p class="advantage__card-text">
+                            При производстве используются только безопасные для человека материалы
+                        </p>
+                    </div>
+                </div>
+
+                <div class="advantage__card">
+                    <div class="advantage__card-number">6</div>
+                    <div class="advantage__card-desc">
+                        <h4 class="advantage__card-title">Качественная фурнитура</h4>
+                        <p class="advantage__card-text">
+                            Стальные двери от производителя противостоят попыткам взлома
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <div class="container">
+            <div class="feedback__heading">
+                <h2 class="heading-sections">
+                    Закажите консультацию нашего специалиста совершенно бесплатно!
+                </h2>
+            </div>
+            
+            <form class="feedback-form js-form" method="POST">
+                <div class="feedback-form-group">
+                    <label for="name" class="feedback-form__field-wrapper">
+                        <span>Введите имя</span>
+                        <input class="feedback-form__field" type="text" name="name">
+                    </label>
+                    <label for="phone" class="feedback-form__field-wrapper">
+                        <span>Введите номер телефона</span>
+                        <input class="feedback-form__field feedback-form__field-phone" type="text" name="phone">
+                    </label>
+                    <button type="submit" class="btn-dark-orange">Заказать звонок</button>
+                </div>
+                <label class="feedback-form__personal-data">
+                    <input class="real-checkbox" type="checkbox" name="check" checked> 
+                    <div class="custom-checkbox"></div>
+                    <span>Я согласен на</span>
+                    <a href="#!" target="_blank">&nbsp;обработку персональных данных</a>
+                </label>
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+            </form>
+        </div>
+    </section>
+
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog__heading">
+                <h2 class="heading-sections">Каталог товаров</h2>
+            </div>
+
+            <div class="catalog__wrapper">
+
+                {{#if doors.length}}
+
+                    {{#each doors}}
+                        <div class="catalog__card"> 
+                            <div class="catalog__card-badge">{{badgeDoor2}}</div>
+                            <div class="catalog__card-plate">
+                                <img class="preview" src="/{{imgUrl}}" alt="{{titleDoor}}">
+                            </div>
+                            
+                            <a onclick="window.open('/catalog/{{id}}')" href="/catalog/{{id}}" target="_blank" class="catalog__card-title">
+                                Стальная дверь 
+                                <p>{{titleDoor}}</p>
+                            </a>
+                            
+                            <div class="catalog__card-class">{{classDoor}}</div>
+                            <div class="catalog__card-group">
+                                <div class="catalog__card-price price">{{priceDoor}}</div>
+                                <a onclick="window.open('/catalog/{{id}}')" href="/catalog/{{id}}" class="btn-buy">
+                                    Купить
+                                </a>
+                            </div>
+                            <div class="catalog__card-price catalog__old-card-price price">{{oldPriceDoor}}</div>
+                        </div>
+                    {{/each}}
+
+                {{else}}
+                    <h2>Товаров нет</h2>
+                {{/if}}
+
+            </div>
+            <a href="/catalog" class="catalog__all">Посмотреть весь каталог</a>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="gallery__heading">
+                <h2 class="heading-sections">Галерея наших работ</h2>
+            </div>
+            
+            <div class="gallery-slider">
+                <div id="gallerySlider" class="owl-carousel">
+                    <img class="gallery-slider__item" src="img/gallery/slide_1.jpg" alt="1">
+                    <img class="gallery-slider__item" src="img/gallery/slide_2.jpg" alt="2">
+                    <img class="gallery-slider__item" src="img/gallery/slide_3.jpg" alt="3">
+                    <img class="gallery-slider__item" src="img/gallery/slide_4.jpg" alt="4">
+                    <img class="gallery-slider__item" src="img/gallery/slide_5.jpg" alt="5">
+                    <img class="gallery-slider__item" src="img/gallery/slide_6.jpg" alt="6">
+                    <img class="gallery-slider__item" src="img/gallery/slide_7.jpg" alt="7">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call">
+        <div class="container">
+            <div class="call-wrapper">
+                <div class="call__desc">
+                    <div class="call__heading">
+                        <h2 class="heading-sections">
+                            Не определились с выбором?<br> Мы вам поможем!
+                        </h2>
+                    </div>
+
+                    <div class="call__desc-text">
+                        <p>Закажите звонок и мы перезвоним вам в течении 15 минут.</p>
+                        <p>Это совершенно бесплатно!</p>
+                    </div>
+
+                    <button class="btn-dark-orange btn-call_2">Заказать звонок</button>
+                </div>
+
+                <div class="call__img">
+                    <img src="img/feedback.png" alt="man">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="working" id="working">
+        <div class="container">
+            <div class="working__heading">
+                <h2 class="heading-sections">Как мы работаем?</h2>
+            </div>
+
+            <div class="working__card-wrapper">
+                <div class="working__card">
+                    <div class="working__card-icon">
+                        <img src="img/icons/delivery/order.svg" alt="order">
+                    </div>
+                    <div class="working__card-text">
+                        <p>
+                            Вы оставляете заявку на сайте, наш специалист связывается с вами для уточнения деталей
+                        </p>
+                    </div>
+                </div>
+
+                <div class="working__card">
+                    <div class="working__card-icon">
+                        <img src="img/icons/delivery/percent.svg" alt="percent ">
+                    </div>
+                    <div class="working__card-text">
+                        <p>
+                            Наш специалист приезжает по адресу, делает необходимые замеры, после внесения 50% оплаты заключается договор
+                        </p>
+                    </div>
+                </div>
+
+                <div class="working__card">
+                    <div class="working__card-icon">
+                        <img src="img/icons/delivery/delivery.svg" alt="delivery">
+                    </div>
+                    <div class="working__card-text">
+                        <p>
+                            Доставка дверей осуществляется до места установки
+                        </p>
+                    </div>
+                </div>
+
+                <div class="working__card">
+                    <div class="working__card-icon">
+                        <img src="img/icons/delivery/master.svg" alt="master">
+                    </div>
+                    <div class="working__card-text">
+                        <p>
+                            Наш мастер заменяет старую дверь на новую
+                        </p>
+                    </div>
+                </div>
+
+                <div class="working__card">
+                    <div class="working__card-icon">
+                        <img src="img/icons/delivery/purse.svg" alt="purse">
+                    </div>
+                    <div class="working__card-text">
+                        <p>
+                            После установки двери производится остаток оплаты
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts__heading">
+                <h2 class="heading-sections">Контакты</h2>
+            </div>
+            
+            <div class="contacts__card-wrapper">
+                <div class="contacts__card">
+                    <div class="contacts__card-icon">
+                        <img src="img/icons/contacts/phone_contact.svg" alt="phone">
+                    </div>
+                    <div class="contacts__card-desc">
+                            <h5 class="contacts__card-title">Телефон:</h5>
+                            <div class="contacts__card-text">
+                                <a href="tel:+74997148489">+7 (499)-714-84-89</a>
+                                <a href="tel:+79773233848">+7 (977)-323-38-48</a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="contacts__card">
+                    <div class="contacts__card-icon">
+                        <img src="img/icons/contacts/label_contact.svg" alt="label">
+                    </div>
+                    <div class="contacts__card-desc">
+                            <h5 class="contacts__card-title">Адрес:</h5>
+                            <div class="contacts__card-text">
+                            Москва, ул. Бочкова 6к1
+                            </div>
+                    </div>
+                </div>
+
+                <div class="contacts__card">
+                    <div class="contacts__card-icon">
+                        <img src="img/icons/contacts/chart_contact.svg" alt="chart">
+                    </div>
+                    <div class="contacts__card-desc">
+                            <h5 class="contacts__card-title">График работы:</h5>
+                            <div class="contacts__card-text">
+                            С 8:00 до 20:00
+                            </div>
+                    </div>
+                </div>
+
+                <div class="contacts__card">
+                    <div class="contacts__card-icon">
+                        <img src="img/icons/contacts/mail_contact.svg" alt="mail">
+                    </div>
+                    <div class="contacts__card-desc">
+                            <h5 class="contacts__card-title">Почта:</h5>
+                            <div class="contacts__card-text">
+                                <a href="mailto:stalimsk@mail.ru?subject=Вопрос c сайта Melcard">stalimsk@mail.ru</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contacts__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2242.005045366093!2d37.630765616050766!3d55.810512795006794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535e13d34442b%3A0x2ef62c93d30a207a!2z0YPQuy4g0JHQvtGH0LrQvtCy0LAsIDYsINCc0L7RgdC60LLQsCwgMTI5MDg1!5e0!3m2!1sru!2sru!4v1599501912016!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+</main>

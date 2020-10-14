@@ -1,0 +1,166 @@
+<header>
+    <div class="header-wrapper cart-header-hide--after">
+        {{#if isAuth}}
+            <div class="logout-wrapper">
+                <div class="container">
+                    <a class="logout" href="/stock/edit">Акция</a>
+                    {{!-- <a class="logout" href="/stock">Акция</a> --}}
+                    <a class="logout" href="/auth/logout">Выйти из системы</a>
+                </div>
+            </div> 
+        {{/if}}
+        <div class="container">
+            <div class="header">
+                <a href="/" class="header__logo">
+                    <img src="/img/logo/logo.svg" alt="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container cart-header-hide">
+        <nav class="navigation">
+            <div class="nav-burger__btn">
+                <span class="nav-burger__lines"></span>
+            </div>
+            <ul class="nav-burger__menu">
+                <li>
+                    <a href="/">Главная</a>
+                </li>
+                <li>
+                    <a href="/catalog">Каталог</a>
+                </li>
+                <li>
+                    <a href="/#gallery">Галерея</a>
+                </li>
+                <li>
+                    <a href="/#working">Как мы работаем</a>
+                </li>
+                <li>
+                    <a href="/#contacts">Контакты</a>
+                </li>
+            </ul>
+            <a class="nav-cart" href="/cart">
+                <img src="/img/icons/header/cart_header.svg" alt="cart">
+                <span></span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="nav-burger__overlay"></div>
+</header>
+
+<main>
+    <div class="cart">
+        <div class="container">
+            <h1 class="cart-heading">Моя корзина</h1>
+        </div>
+        
+        <div class="cart-titles-wrapper">
+            <div class="container">
+                <div class="cart-titles">
+                    <span class="cart-goods">Товары</span>
+                    <span class="cart-amount">Кол-во</span>
+                    <span>Цена</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="goods-container">
+
+            </div>
+        </div>
+
+        <div class="cart-titles-wrapper">
+            <div class="container">
+                <div class="cart-titles">
+                    <span class="cart-goods">Услуги</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="goods-container-services">
+                    
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="container">
+            <div class="cart-total">
+                Итого
+                <span class="price"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="order">
+        <div class="container">
+            <h1 class="cart-heading order-cart-heading">Оформление заказа</h1>
+
+            <form class="cart-form" method="POST">
+                <div class="row sb mb60">
+                    <label for="name" class="order__field-wrapper">
+                        <span>Имя *</span>
+                        <input class="order__field" type="text" name="name">
+                    </label>
+                    <label for="lastname" class="order__field-wrapper">
+                        <span>Фамилия</span>
+                        <input class="order__field" type="text" name="lastname">
+                    </label>
+                </div>
+
+                <div class="row sb mb60">
+                    <label for="phone" class="order__field-wrapper">
+                        <span>Телефон *</span>
+                        <input class="order__field" type="number" name="phone" placeholder="+7">
+                    </label>
+                    <label for="address" class="order__field-wrapper">
+                        <span>Адрес *</span>
+                        <input class="order__field" type="text" name="address">
+                    </label>
+                </div>
+
+                <div class="row sb mb60">
+                    <label for="house" class="order__field-wrapper">
+                        <span>Дом</span>
+                        <input class="order__field order__field--small" type="text" name="house">
+                    </label>
+                    <label for="porch" class="order__field-wrapper">
+                        <span>Подъезд</span>
+                        <input class="order__field order__field--small" type="text" name="porch">
+                    </label>
+                    <label for="floor" class="order__field-wrapper">
+                        <span>Этаж</span>
+                        <input class="order__field order__field--small" type="text" name="floor">
+                    </label>
+                    <label for="flat" class="order__field-wrapper">
+                        <span>Квартира</span>
+                        <input class="order__field order__field--small" type="text" name="flat">
+                    </label>
+                </div>
+
+                <div class="row sb mb30">
+                    <label for="comment" class="order__field-wrapper w100">
+                        <span>Комментарий к заказу (необязательно)</span>
+                        <textarea class="order__field order__comment" name="comment" maxlength="200"></textarea>
+                    </label>
+                </div>
+
+                <label class="order__personal-data">
+                    <input class="real-checkbox" type="checkbox" name="check" checked> 
+                    <div class="custom-checkbox"></div>
+                    <span>
+                        Я принимаю условия пользовательского соглашения и согласен на
+                        <a href="#!" target="_blank">&nbsp;обработку персональных данных</a>
+                    </span>
+                </label>
+                
+                <input type="hidden" name="_csrf" value="{{csrf}}">
+                <button class="order-btn btn-dark-orange">Оформить заказ</button>
+            </form>
+        </div>
+    </div>
+</main>

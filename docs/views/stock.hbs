@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="stock-wrapper">
+        <h1>Акция</h1>
+
+        <form action="/stock" method="POST">
+            <div class="add-field">
+                <label for="stockName">Название</label>
+                <input type="text" name="stockName" id="stockName">
+            </div>
+
+            <div class="add-field">
+                <label for="string1">Строка - 1</label>
+                <input type="text" name="string1" id="string1">
+            </div>
+
+            <div class="add-field">
+                <label for="string2">Строка - 2</label>
+                <input type="text" name="string2" id="string2">
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <button type="submit" class="header__btn">Сохранить</button>
+        </form>
+    </div>
+</div>

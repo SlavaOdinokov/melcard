@@ -1,0 +1,326 @@
+<div class="container">
+    <div class="add">
+        <h1>Редактировать {{door.titleDoor}}</h1>
+        
+        {{!-- enctype="multipart/form-data" --}}
+        <form action="/catalog/edit" method="POST" enctype="multipart/form-data">
+            <div class="add-field">
+                <label for="titleDoor">Название двери *</label>
+                <input type="text" name="titleDoor" id="titleDoor" value="{{door.titleDoor}}" required>
+            </div>
+
+            <div class="add-field">
+                <label for="imgDoor">Изображение двери</label>
+                <input type="file" name="imgDoor" id="imgDoor">
+            </div>
+
+            <div class="add-field">
+                <label for="priceDoor">Цена *</label>
+                <input type="text" name="priceDoor" id="priceDoor" value="{{door.priceDoor}}" required>
+            </div>
+
+            <div class="add-field">
+                <label for="oldPriceDoor">Старая цена (зачеркнута)</label>
+                <input type="text" name="oldPriceDoor" id="oldPriceDoor" value="{{door.oldPriceDoor}}">
+            </div>
+
+            <div class="add-field">
+                <label for="classDoor">Класс двери *</label>
+                <select name="classDoor" id="classDoor">
+                    <option value="Премиум класс">Премиум класс</option>
+                    <option value="Максимальный комфорт">Максимальный комфорт</option>
+                    <option value="Бизнес класс">Бизнес класс</option>
+                </select>
+            </div>
+
+            <div class="add-field">
+                <label for="badgeDoor_1">Статус наличия *</label>
+                <select name="badgeDoor1" id="badgeDoor_1">
+                    <option value="В наличии">В наличии</option>
+                    <option value="Нет в наличии">Нет в наличии</option>
+                </select>
+            </div>
+
+            <div class="add-field">
+                <label for="badgeDoor_2">Статус акции</label>
+                <select name="badgeDoor2" id="badgeDoor_2">
+                    <option value=""></option>
+                    <option value="Распродажа">Распродажа</option>
+                    <option value="Новинка">Новинка</option>
+                </select>
+            </div>
+
+            {{#each door.specifications}}
+                <div class="add-field add-field--spec">
+                    <label for="specSteelThickness">Толщина стали *</label>
+                    <input type="text" name="specSteelThickness" id="specSteelThickness" value="{{specSteelThickness}}">
+                </div>
+                <div class="add-field add-field--spec">
+                    <label for="specBladeThickness">Толщина полотна *</label>
+                    <input type="text" name="specBladeThickness" id="specBladeThickness" value="{{specBladeThickness}}">
+                </div>
+                <div class="add-field add-field--spec">
+                    <label for="specDoorThickness">Толщина двери *</label>
+                    <input type="text" name="specDoorThickness" id="specDoorThickness" value="{{specDoorThickness}}">
+                </div>
+                <div class="add-field add-field--spec">
+                    <label for="specDoorWeight">Вес двери *</label>
+                    <input type="text" name="specDoorWeight" id="specDoorWeight" value="{{specDoorWeight}}">
+                </div>
+            {{/each}}
+
+            <div class="add-field">
+                <h3>Выберети панели</h3>
+                <div class="add-field__panels">
+                    
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="sanRemo9003"
+                            value="Сан Ремо 1 RAL 9003, san_remo_1_RAL_9003, 10600, san-remo__9003" 
+                        >
+                        <label for="sanRemo9003">Сан Ремо 1 RAL 9003</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="sanRemo9010"
+                            value="Сан Ремо 1 RAL 9010 (цвет на фото может не совпадать), san_remo_1_RAL_9010, 10600, san-remo__9010" 
+                        >
+                        <label for="sanRemo9010">Сан Ремо 1 RAL 9010</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="sanRemo7037"
+                            value="Сан Ремо 2 RAL 7037, san_remo_2_RAL_7037, 10600, san-remo__7037"
+                        >
+                        <label for="sanRemo7037">Сан Ремо 2 RAL 7037</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="sanRemo7047"
+                            value="Сан Ремо 1 RAL 7047 (цвет на фото может не совпадать), san_remo_1_RAL_7047, 10600, san-remo__7047"
+                        >
+                        <label for="sanRemo7047">Сан Ремо 1 RAL 7047</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="valentiya2Oak"
+                            value="Валентия 2 - Дуб Бренди ШПОН, valentiya2-oak, 9900, valentiya2-oak"
+                        >
+                        <label for="valentiya2Oak">Валентия 2 - Дуб Бренди ШПОН</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="valentiya2Ash"
+                            value="Валентия 2 - Ясень жемчуг ШПОН, valentiya2-ash, 9900, valentiya2-ash"
+                        >
+                        <label for="valentiya2Ash">Валентия 2 - Ясень жемчуг ШПОН</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fl243WhiteMatt" 
+                            value="ФЛ-243-м белая матовая, fl-243-white-matt, 4000, fl-243-white-matt"
+                        >
+                        <label for="fl243WhiteMatt">ФЛ-243-м белая матовая</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fl316WhiteAsh"
+                            value="ФЛ-316 белый ясень, fl-316-white-ash, 4000, fl-316-white-ash"
+                        >
+                        <label for="fl316WhiteAsh">ФЛ-316 белый ясень</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="L5Wenge"
+                            value="L-5 Венге, L5-wenge, 4500, L5-wenge"
+                        >
+                        <label for="L5Wenge">L-5 Венге</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fl243Graphite"
+                            value="ФЛ-243-м Графит вуд дуб, fl-243-graphite, 4000, fl-243-graphite"
+                        >
+                        <label for="fl243Graphite">ФЛ-243-м Графит вуд дуб</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="oakSilver"
+                            value="Дуб сильвер поперечный, oak-silver, 4000, oak-silver"
+                        >
+                        <label for="oakSilver">Дуб сильвер поперечный</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="oakTuscany"
+                            value="Дуб тоскано поперечный, oak-tuscany, 4000, oak-tuscany"
+                        >
+                        <label for="oakTuscany">Дуб тоскано поперечный</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="luchyWenge"
+                            value="Лучи-М венге распил кофе, luchy-wenge, 4000, luchy-wenge"
+                        >
+                        <label for="luchyWenge">Лучи-М венге распил кофе</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="luchyGraphite"
+                            value="Лучи графит, luchy-graphite, 4950, luchy-graphite"
+                        >
+                        <label for="luchyGraphite">Лучи графит</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="luchyMilk"
+                            value="Лучи милк, luchy-milk, 4950, luchy-milk"
+                        >
+                        <label for="luchyMilk">Лучи милк</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fl39SandalWhite"
+                            value="ФЛ-39 Сандал белый, fl-39-sandal-white, 4500, fl-39-sandal-white"
+                        >
+                        <label for="fl39SandalWhite">ФЛ-39 Сандал белый</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="L5SandalWhite"
+                            value="L-5 Сандал белый, L5-sandal-white, 4700, L5-sandal-white"
+                        >
+                        <label for="L5SandalWhite">L-5 Сандал белый</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="flz120Mirror"
+                            value="Белая матовая с зеркалом ФЛЗ-120, flz-120-mirror, 6700, flz-120-mirror"
+                        >
+                        <label for="flz120Mirror">Белая матовая с зеркалом ФЛЗ-120</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="ecoWenge"
+                            value="Эковенге поперечный, eco-wenge, 4000, eco-wenge"
+                        >
+                        <label for="ecoWenge">Эковенге поперечный</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="pozitanoOak"
+                            value="Позитано - Дуб бургундский ШПОН, pozitano-oak, 9900, pozitano-oak"
+                        >
+                        <label for="pozitanoOak">Позитано - Дуб бургундский ШПОН</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fodga7Oak"
+                            value="Фоджа 7 - Дуб бургундский ШПОН, fodga7-oak, 9900, fodga7-oak"
+                        >
+                        <label for="fodga7Oak">Фоджа 7 - Дуб бургундский ШПОН</label>
+                    </div>
+
+                    <div class="add-field__panels-group">
+                        <input 
+                            type="checkbox" name="panels" id="fodga7Ash"
+                            value="Фоджа 7 - Ясень жемчуг ШПОН, fodga7-ash, 9900, fodga7-ash"
+                        >
+                        <label for="fodga7Ash">Фоджа 7 - Ясень жемчуг ШПОН</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-field">
+                <label for="descDoor1">Описание (абзац)</label>
+                <textarea type="text" name="descDoor1" id="descDoor1">{{door.descDoor1}}</textarea>
+
+                <label for="descDoor2">Описание (абзац)</label>
+                <textarea type="text" name="descDoor2" id="descDoor2">{{door.descDoor2}}</textarea>
+
+                <label for="descDoor3">Описание (абзац)</label>
+                <textarea type="text" name="descDoor3" id="descDoor3">{{door.descDoor3}}</textarea>
+            </div>
+
+            <div class="add-field">
+                <label for="assemblyLocks1">Замок</label>
+                <input type="text" name="assemblyLocks1" id="assemblyLocks1" value="{{door.assembly1.assemblyLocks1}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyClass1">Класс</label>
+                <input type="text" name="assemblyClass1" id="assemblyClass1" value="{{door.assembly1.assemblyClass1}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyType1">Тип</label>
+                <input type="text" name="assemblyType1" id="assemblyType1" value="{{door.assembly1.assemblyType1}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyCountry1">Страна производителя</label>
+                <input type="text" name="assemblyCountry1" id="assemblyCountry1" value="{{door.assembly1.assemblyCountry1}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyBolts1">Количество ригелей</label>
+                <input type="text" name="assemblyBolts1" id="assemblyBolts1" value="{{door.assembly1.assemblyBolts1}}">
+            </div>
+            <div class="add-field add-field-last">
+                <label for="assemblyKeys1">Колиество ключей</label>
+                <input type="text" name="assemblyKeys1" id="assemblyKeys1" value="{{door.assembly1.assemblyKeys1}}">
+            </div>
+
+            <div class="add-field">
+                <label for="assemblyLocks2">Замок</label>
+                <input type="text" name="assemblyLocks2" id="assemblyLocks2" value="{{door.assembly2.assemblyLocks2}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyClass2">Класс</label>
+                <input type="text" name="assemblyClass2" id="assemblyClass2" value="{{door.assembly2.assemblyClass2}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyType2">Тип</label>
+                <input type="text" name="assemblyType2" id="assemblyType2" value="{{door.assembly2.assemblyType2}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyCountry2">Страна производителя</label>
+                <input type="text" name="assemblyCountry2" id="assemblyCountry2" value="{{door.assembly2.assemblyCountry2}}">
+            </div>
+            <div class="add-field">
+                <label for="assemblyBolts2">Количество ригелей</label>
+                <input type="text" name="assemblyBolts2" id="assemblyBolts2" value="{{door.assembly2.assemblyBolts2}}">
+            </div>
+            <div class="add-field add-field-last">
+                <label for="assemblyKeys2">Колиество ключей</label>
+                <input type="text" name="assemblyKeys2" id="assemblyKeys2" value="{{door.assembly2.assemblyKeys2}}">
+            </div>
+            
+            <input type="hidden" name="id" value="{{door.id}}">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <button type="submit" class="header__btn">Сохранить</button>
+        </form>
+        
+        <form action="/catalog/remove" method="POST">
+            <input type="hidden" name="id" value="{{door.id}}">
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <button type="submit" class="header__btn dtn-door-delete">Удалить</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="login">
+
+        {{#if error}}
+            <p class="alert">{{error}}</p>
+        {{/if}}
+
+        <form action="/auth/login" method="POST">
+            <div class="login-input-field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="login-input-field">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <button type="submit">Войти</button>
+        </form>
+
+    </div>
+</div>

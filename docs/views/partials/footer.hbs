@@ -1,0 +1,196 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrapper">
+            <div class="footer__logo-wrapper">
+                <div class="footer__logo">
+                    <a href="/">
+                        <img src="/img/logo/logo_footer.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="footer__copy">
+                    <img src="/img/copyright.svg" alt="copyright">
+                    2020 Все права защищены.
+                </div>
+            </div>
+            
+            <div class="footer__nav-group">
+                <nav class="footer__nav">
+                    <div class="footer__nav-title">Компания</div>
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/catalog">Каталог</a></li>
+                        <li><a href="/#gallery">Галерея</a></li>
+                        <li><a href="/#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer__clients footer__nav">
+                    <div class="footer__nav-title">Клиентам</div>
+                    <ul>
+                        <li><a href="#!">Доставка</a></li>
+                        <li><a href="#!">Оплата</a></li>
+                        <li><a href="#!">Гарантия</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="backTop"><a href="#top"><img src="/img/arrowup.png" alt="arrow-top"/></a></div>
+
+<!-- POPUP FORM Для 6 блока-->
+<div class="popup-overlay__1 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading">Закажите звонок совершенно бесплатно!</h3>
+        
+        <form class="popup-form js-form" method="POST">
+            <div class="popup-form-group">
+                <label for="name" class="popup-form__field-wrapper">
+                    <span>Введите имя</span>
+                    <input class="popup-form__field" type="text" name="name">
+                </label>
+                <label for="phone" class="popup-form__field-wrapper">
+                    <span>Введите номер телефона</span>
+                    <input class="popup-form__field" type="text" name="phone">
+                </label>
+                <button type="submit" class="js-btn btn-dark-orange btn-dark-orange--small">Обратный звонок</button>
+            </div>
+
+            <label class="popup-form__personal-data">
+                <input class="real-checkbox" type="checkbox" name="check" checked> 
+                <div class="custom-checkbox"></div>
+                Я согласен на
+                <a href="#!" target="_blank">&nbsp;обработку персональных данных</a>
+            </label>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+        </form>
+
+        <span class="popup-close js-close"></span>
+    </div>
+</div>
+<!-- // POPUP FORM -->
+
+<!-- POPUP FORM Для 1 блока-->
+<div class="popup-overlay__2 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading">Закажите замер дверных проемов совершенно бесплатно!</h3>
+        
+        <form class="popup-form js-form" method="POST">
+            <div class="popup-form-group">
+                <label for="name" class="popup-form__field-wrapper">
+                    <span>Введите имя</span>
+                    <input class="popup-form__field" type="text" name="name">
+                </label>
+                <label for="phone" class="popup-form__field-wrapper">
+                    <span>Введите номер телефона</span>
+                    <input class="popup-form__field" type="text" name="phone">
+                </label>
+                <button type="submit" class="btn-dark-orange btn-dark-orange--small">Обратный звонок</button>
+            </div>
+
+            <label class="popup-form__personal-data">
+                <input class="real-checkbox" type="checkbox" name="check" checked> 
+                <div class="custom-checkbox"></div>
+                Я согласен на
+                <a href="#!" target="_blank">&nbsp;обработку персональных данных</a>
+            </label>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+        </form>
+
+        <span class="popup-close js-close"></span>
+    </div>
+</div>
+<!-- // POPUP FORM -->
+
+<!-- POPUP FORM Карточка товара-->
+<div class="popup-overlay__3 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading">
+            Закажите в один клик и в течении 15 минут мы перезвоним вам для уточнения деталей заказа.
+        </h3>
+        
+        <form class="popup-form js-form" method="POST">
+            <div class="popup-form-group">
+                <label for="name" class="popup-form__field-wrapper">
+                    <span>Введите имя</span>
+                    <input class="popup-form__field" type="text" name="name">
+                </label>
+                <label for="phone" class="popup-form__field-wrapper">
+                    <span>Введите номер телефона</span>
+                    <input class="popup-form__field" type="text" name="phone">
+                </label>
+                <button type="submit" class="btn-dark-orange btn-dark-orange--small">Обратный звонок</button>
+            </div>
+
+            <label class="popup-form__personal-data">
+                <input class="real-checkbox" type="checkbox" name="check" checked> 
+                <div class="custom-checkbox"></div>
+                Я согласен на
+                <a href="#!" target="_blank">&nbsp;обработку персональных данных</a>
+            </label>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+        </form>
+
+        <span class="popup-close js-close"></span>
+    </div>
+</div>
+<!-- // POPUP FORM -->
+
+<!-- POPUP Да/Нет-->
+{{!-- <div class="popup-overlay__4 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading">
+            Вы уверены, что хотите удалить товар?
+        </h3>
+        
+        <div class="popup-delet">
+            <div class="popup__yes">Да</div>
+            <div class="popup__no">Нет</div>
+        </div>
+    </div>
+</div> --}}
+<!-- // POPUP -->
+
+<!-- POPUP Товар добавлен в корзину!-->
+<div class="popup-overlay__4 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading">
+            Товар добавлен в корзину!
+        </h3>
+        
+        <div class="popup-overlay__4--btn-group">
+            <button class="btn-dark-orange btn-dark-orange--small_2 js-btn-back1 btn-back1">Вернуться к покупкам</button>
+            <a href="/cart" class="btn-dark-orange btn-dark-orange--small_2 js-btn-back1">Перейти в корзину</a>
+        </div>
+    </div>
+</div>
+<!-- // POPUP -->
+
+<!-- POPUP Заказ принят-->
+<div class="popup-overlay__5 js-popup-overlay">
+    <div class="popup js-popup">
+        <h3 class="popup-heading mb25">Заказ принят в обработку!</h3>
+        <h5 class="popup-heading--small">
+            Наш специалист свяжется с вами в течении 15 мин для подтверждения заказа!
+        </h5>
+        <button class="btn-dark-orange btn-dark-orange--small_2 js-btn-back">Вернуться к покупкам</button>
+    </div>
+</div>
+<!-- // POPUP -->
+
+<!-- POPUP Заказ принят-->
+<div class="popup-overlay__6 js-popup-overlay">
+    <div class="popup js-popup">
+        <h5 class="popup-heading--small popup-heading--small_2">
+            Спасибо за заявку!<br/>
+            Наш специалист свяжется с вами в течении 15 минут!
+        </h5>
+        <button class="btn-ok btn-dark-orange btn-dark-orange--small_3">Ок</button>
+    </div>
+</div>
+<!-- // POPUP -->
+
+<script src="/libs/jquery/jquery-3.4.1.min.js"></script>
+<script src="/libs/owlcarousel2/owl.carousel.min.js"></script>
+<script src="/js/script.js"></script>
